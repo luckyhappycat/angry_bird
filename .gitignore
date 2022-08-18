@@ -2,6 +2,15 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
+
+
+AngryBird/obj
+AngryBird/Logs
+AngryBird/etc
+AngryBird/Library
+AngryBird/Temp
+
+
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
