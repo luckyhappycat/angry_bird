@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     public List<Bird> birds;
     public List<Pig> pig;
@@ -22,10 +23,10 @@ public class GameManager : MonoBehaviour {
     private void Awake()
     {
         _instance = this;
-        if(birds.Count > 0) {
+        if (birds.Count > 0)
+        {
             originPos = birds[0].transform.position;
         }
-        
     }
 
     private void Start()
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     private void Initialized()
     {
-        for(int i = 0; i < birds.Count; i++)
+        for (int i = 0; i < birds.Count; i++)
         {
             if (i == 0) //第一只小鸟
             {
@@ -59,11 +60,11 @@ public class GameManager : MonoBehaviour {
     /// <summary>
     /// 判定游戏逻辑
     /// </summary>
-   public  void NextBird()
+    public void NextBird()
     {
-        if(pig.Count > 0)
+        if (pig.Count > 0)
         {
-            if(birds.Count > 0)
+            if (birds.Count > 0)
             {
                 //下一只飞吧
                 Initialized();
@@ -82,14 +83,17 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    public void ShowStars() {
+    public void ShowStars()
+    {
         StartCoroutine("show");
     }
 
-    IEnumerator show() {
+    IEnumerator show()
+    {
         for (; starsNum < birds.Count + 1; starsNum++)
         {
-            if (starsNum >= stars.Length) {
+            if (starsNum >= stars.Length)
+            {
                 break;
             }
             yield return new WaitForSeconds(0.2f);
@@ -98,28 +102,32 @@ public class GameManager : MonoBehaviour {
         print(starsNum);
     }
 
-    public void Replay() {
+    public void Replay()
+    {
         SaveData();
         SceneManager.LoadScene(2);
     }
 
-    public void Home() {
+    public void Home()
+    {
         SaveData();
         SceneManager.LoadScene(1);
     }
 
-    public void SaveData() {
-        if (starsNum > PlayerPrefs.GetInt(PlayerPrefs.GetString("nowLevel"))){
+    public void SaveData()
+    {
+        if (starsNum > PlayerPrefs.GetInt(PlayerPrefs.GetString("nowLevel")))
+        {
             PlayerPrefs.SetInt(PlayerPrefs.GetString("nowLevel"), starsNum);
         }
         //存储所有的星星个数
-        int sum = 0;        
-        for (int i = 1; i <= totalNum; i++) {
+        int sum = 0;
+        for (int i = 1; i <= totalNum; i++)
+        {
             sum += PlayerPrefs.GetInt("level" + i.ToString());
         }
-       
 
-        PlayerPrefs.SetInt("totalNum",sum);
+        PlayerPrefs.SetInt("totalNum", sum);
         print(PlayerPrefs.GetInt("totalNum"));
     }
 }

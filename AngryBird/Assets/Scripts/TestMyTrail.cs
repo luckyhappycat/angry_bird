@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestMyTrail : MonoBehaviour {
+public class TestMyTrail : MonoBehaviour
+{
 
     public WeaponTrail myTrail;
 
@@ -32,7 +33,6 @@ public class TestMyTrail : MonoBehaviour {
             }
 
             tempT -= t;
-
             if (myTrail.time > 0)
             {
                 myTrail.UpdateTrail(Time.time, t);
@@ -53,7 +53,7 @@ public class TestMyTrail : MonoBehaviour {
     {
         //设置拖尾时长
         myTrail.SetTime(2.0f, 0.0f, 1.0f);
-        
+
         myTrail.StartTrail(0.5f, 0.4f);
     }
     /// <summary>
@@ -61,7 +61,6 @@ public class TestMyTrail : MonoBehaviour {
     /// </summary>
     public void ClearTrails()
     {
-        
         myTrail.ClearTrail();
     }
 }

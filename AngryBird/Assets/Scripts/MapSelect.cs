@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MapSelect : MonoBehaviour {
+public class MapSelect : MonoBehaviour
+{
 
     public int starsNum = 0;
-    private  bool isSelect = false;
+    private bool isSelect = false;
 
     public GameObject locks;
     public GameObject stars;
@@ -23,20 +24,21 @@ public class MapSelect : MonoBehaviour {
     {
         //PlayerPrefs.DeleteAll();
 
-        if (PlayerPrefs.GetInt("totalNum", 0) >= starsNum) {
-
+        if (PlayerPrefs.GetInt("totalNum", 0) >= starsNum)
+        {
             isSelect = true;
-
         }
 
-        if (isSelect) {
+        if (isSelect)
+        {
             locks.SetActive(false);
             stars.SetActive(true);
 
             //TODo:text显示
-            int counts = 0; 
-            for (int i = startNum; i <= endNum; i++) {
-                counts += PlayerPrefs.GetInt("level"+i.ToString(),0);
+            int counts = 0;
+            for (int i = startNum; i <= endNum; i++)
+            {
+                counts += PlayerPrefs.GetInt("level" + i.ToString(), 0);
             }
             starsText.text = counts.ToString() + "/60";
         }
@@ -46,13 +48,15 @@ public class MapSelect : MonoBehaviour {
     /// </summary>
     public void Selected()
     {
-        if (isSelect) {
+        if (isSelect)
+        {
             panel.SetActive(true);
             map.SetActive(false);
         }
     }
 
-    public void panelSelect() {
+    public void panelSelect()
+    {
         panel.SetActive(false);
         map.SetActive(true);
     }

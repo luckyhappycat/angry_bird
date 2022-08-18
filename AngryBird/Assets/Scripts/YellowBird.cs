@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YellowBird : Bird {
-
+public class YellowBird : Bird
+{
     /// <summary>
     /// 重写方法
     /// </summary>
@@ -12,5 +12,4 @@ public class YellowBird : Bird {
         base.ShowSkill();
         rg.velocity *= 2;
     }
-
 }
