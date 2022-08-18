@@ -10,7 +10,7 @@ AngryBird/etc
 AngryBird/Library/
 AngryBird/Temp
 **/*/*.log
-
+*.log
 
 /[Ll]ibrary/
 /[Tt]emp/
