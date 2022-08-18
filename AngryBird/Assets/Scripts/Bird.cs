@@ -41,7 +41,8 @@ public class Bird : MonoBehaviour
         render = GetComponent<SpriteRenderer>();
     }
 
-    private void OnMouseDown()//鼠标按下
+    //鼠标按下
+    private void OnMouseDown()
     {
         if (canMove)
         {
@@ -51,8 +52,8 @@ public class Bird : MonoBehaviour
         }
     }
 
-
-    private void OnMouseUp() //鼠标抬起
+    //鼠标抬起
+    private void OnMouseUp()
     {
         if (canMove)
         {
@@ -71,14 +72,16 @@ public class Bird : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())//判断是否点击到了UI
             return;
 
+        //鼠标一直按下，进行位置的跟随
         if (isClick)
-        {//鼠标一直按下，进行位置的跟随
+        {
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //transform.position += new Vector3(0, 0, 10);
             transform.position += new Vector3(0, 0, -Camera.main.transform.position.z);
 
+            //进行位置限定
             if (Vector3.Distance(transform.position, rightPos.position) > maxDis)
-            { //进行位置限定
+            {
                 Vector3 pos = (transform.position - rightPos.position).normalized;//单位化向量
                 pos *= maxDis;//最大长度的向量
                 transform.position = pos + rightPos.position;

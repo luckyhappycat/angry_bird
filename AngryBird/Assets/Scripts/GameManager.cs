@@ -131,5 +131,3 @@ public class GameManager : MonoBehaviour
         print(PlayerPrefs.GetInt("totalNum"));
     }
 }
-
-

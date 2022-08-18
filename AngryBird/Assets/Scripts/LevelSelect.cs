@@ -54,10 +54,8 @@ public class LevelSelect : MonoBehaviour
     {
         if (isSelect)
         {
-            //
             PlayerPrefs.SetString("nowLevel", "level" + gameObject.name);
             SceneManager.LoadScene(2);
         }
     }
-
 }

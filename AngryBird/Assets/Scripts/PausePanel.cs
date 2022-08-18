@@ -12,7 +12,6 @@ public class PausePanel : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-
     public void Retry()
     {
         Time.timeScale = 1;
@@ -35,7 +34,6 @@ public class PausePanel : MonoBehaviour
             }
         }
     }
-
 
     /// <summary>
     /// 点击了继续按钮
@@ -61,7 +59,6 @@ public class PausePanel : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
-
     /// <summary>
     /// pause动画播放完调用
     /// </summary>
@@ -69,6 +66,7 @@ public class PausePanel : MonoBehaviour
     {
         Time.timeScale = 0;
     }
+
     /// <summary>
     /// resume动画播放完调用
     /// </summary>
@@ -76,5 +74,4 @@ public class PausePanel : MonoBehaviour
     {
         button.SetActive(true);
     }
-
 }

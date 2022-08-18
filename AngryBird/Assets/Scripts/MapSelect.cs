@@ -19,7 +19,6 @@ public class MapSelect : MonoBehaviour
     public int startNum = 1;
     public int endNum = 3;
 
-
     private void Start()
     {
         //PlayerPrefs.DeleteAll();

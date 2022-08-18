@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Pig : MonoBehaviour
 {
-
     public float maxSpeed = 10;
     public float minSpeed = 5;
     private SpriteRenderer render;
@@ -42,8 +41,6 @@ public class Pig : MonoBehaviour
             render.sprite = hurt;
             AudioPlay(hurtClip);
         }
-
-
     }
 
     public void Dead()
