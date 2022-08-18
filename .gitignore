@@ -7,8 +7,9 @@
 AngryBird/obj
 AngryBird/Logs
 AngryBird/etc
-AngryBird/Library
+AngryBird/Library/
 AngryBird/Temp
+**/*/*.log
 
 
 /[Ll]ibrary/
